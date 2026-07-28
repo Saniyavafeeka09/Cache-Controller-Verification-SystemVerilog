@@ -48,7 +48,7 @@ The following diagram illustrates the architecture of the Direct-Mapped Cache Co
 # Verification Environment
 
 The verification environment follows a modular SystemVerilog class-based architecture.
-
+Architecture/Folder Structure.png
 ```
 ## Verification Environment
 
