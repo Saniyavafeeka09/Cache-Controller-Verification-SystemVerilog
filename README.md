@@ -86,30 +86,51 @@ The project follows a modular class-based verification architecture using System
 - Maintains a reference model of cache memory.
 - Compares DUT output against expected results.
 - Automatically reports PASS/FAIL.
+# Cache Controller Verification using SystemVerilog
 
-### Agent
-
-- Connects Generator, Driver and Monitor.
-
-### Environment
-
-- Instantiates all verification components.
-- Controls the execution flow.
-
-### Test
-
-- Creates the environment.
-- Starts the verification process.
+A SystemVerilog class-based verification project for a **Direct-Mapped Cache Controller** implementing **write-back** and **write-allocate** policies. The project features a modular verification environment with directed and constrained-random testing, along with a self-checking scoreboard to automatically validate DUT functionality.
 
 ---
 
-# Folder Structure
+## Project Overview
 
-```
+This project verifies the functionality of a **Direct-Mapped Cache Controller** designed using RTL and tested using a class-based SystemVerilog verification environment.
+
+The verification environment includes:
+
+- Directed test cases
+- Constrained-random stimulus generation
+- Self-checking scoreboard
+- Reference model
+- Functional monitoring
+- Hit/Miss verification
+- Write-back policy verification
+- Write-allocate policy verification
+
+---
+
+# Features
+
+- Direct-Mapped Cache Architecture
+- 4 Cache Lines
+- 8-bit Address
+- 8-bit Data Width
+- Tag and Index Address Decoding
+- Write-Back Cache Policy
+- Write-Allocate Policy
+- Cache Hit Detection
+- Cache Miss Handling
+- Directed Verification
+- Constrained-Random Verification
+- Self-Checking Scoreboard
+- Modular Class-Based Testbench
+
+---
+
+# Project Structure
+
+```text
 Cache-Controller-Verification-SystemVerilog
-│
-├── Architecture
-│   └── cache_architecture.png
 │
 ├── RTL
 │   └── cache_controller.sv
@@ -132,96 +153,163 @@ Cache-Controller-Verification-SystemVerilog
 │   └── scoreboard_report.png
 │
 ├── Waveforms
-│   └── cache_waveform.png
+│   ├── cache_waveform.png
+│   └── README.md
 │
-├── LICENSE
+├── Architecture
+│   ├── cache_architecture.png
+│   └── verification_environment.png
+│
 └── README.md
 ```
 
 ---
 
-# Verification Features
+# Cache Architecture
 
-- Directed Testing
-- Constrained Random Verification
-- Self-Checking Scoreboard
-- Mailbox Communication
-- Hit Verification
-- Miss Verification
-- Write-Back Verification
-- Write-Allocate Verification
-- Reset Verification
+The cache controller uses a **Direct-Mapped Cache** organization consisting of four cache lines. Each memory address is divided into **Tag** and **Index** fields for cache lookup. The controller supports both **write-back** and **write-allocate** cache policies.
+
+<p align="center">
+<img src="Architecture/cache_architecture.png" width="700">
+</p>
+
+---
+
+# Verification Environment
+
+The verification environment is developed using a modular, class-based SystemVerilog architecture. Transactions are generated, driven to the DUT, monitored, and verified automatically using a self-checking scoreboard.
+
+<p align="center">
+<img src="Architecture/verification_environment.png" width="700">
+</p>
+
+---
+
+# Verification Components
+
+| Component | Description |
+|-----------|-------------|
+| Transaction | Defines read/write cache transactions. |
+| Generator | Generates directed and constrained-random transactions. |
+| Driver | Drives transactions to the DUT through the interface. |
+| Monitor | Observes DUT responses and forwards them to the scoreboard. |
+| Scoreboard | Compares DUT outputs with the reference model and reports PASS/FAIL. |
+| Agent | Groups generator, driver and monitor components. |
+| Environment | Connects the verification components. |
+| Test | Creates the environment and starts verification. |
+| Interface | Connects the DUT and verification environment. |
+| DUT | Direct-Mapped Cache Controller RTL. |
+
+---
+
+# Verification Flow
+
+```text
+Generator
+     │
+     ▼
+Driver
+     │
+     ▼
+Interface
+     │
+     ▼
+Cache Controller (DUT)
+     │
+     ▼
+Monitor
+     │
+     ▼
+Scoreboard
+     │
+     ▼
+PASS / FAIL Report
+```
 
 ---
 
 # Simulation Waveform
 
-The waveform below demonstrates cache read, write, hit, miss, reset and address decoding operations.
+The waveform demonstrates:
 
-![Simulation Waveform](Waveforms/cache_waveform.png.png)
+- Reset operation
+- Cache Read
+- Cache Write
+- Cache Hit
+- Cache Miss
+- Address Decoding
+- Tag Generation
+- Index Generation
+- Write-Back Operation
+- Write-Allocate Operation
+
+<p align="center">
+<img src="Waveforms/cache_waveform.png" width="1000">
+</p>
 
 ---
 
 # Simulation Output
 
-Simulation completed successfully without errors.
+Simulation completed successfully without compilation or runtime errors.
 
-![Simulation Output](Results/simulation_output.png)
+<p align="center">
+<img src="Results/simulation_output.png" width="900">
+</p>
 
 ---
 
 # Scoreboard Report
 
-The self-checking scoreboard verified all transactions successfully.
+The self-checking scoreboard successfully verified all generated transactions.
 
-**Final Verification Result**
+### Final Verification Result
 
-- PASS : 20
-- FAIL : 0
-![Scoreboard Report](Results/scoreboard_report.png.png)
+| Metric | Result |
+|---------|--------|
+| PASS | 20 |
+| FAIL | 0 |
+
+<p align="center">
+<img src="Results/scoreboard_report.png" width="650">
+</p>
+
 ---
 
 # Tools Used
 
-- SystemVerilog
-- QuestaSim 2025.2
-- EPWave
-- EDA Playground
-- GitHub
+| Tool | Purpose |
+|------|---------|
+| SystemVerilog | RTL and Verification |
+| QuestaSim 2025.2 | Simulation |
+| EPWave | Waveform Viewing |
+| GitHub | Version Control |
 
 ---
 
-# Learning Outcomes
+# Verification Highlights
 
-Through this project, the following concepts were implemented and verified:
-
-- Direct-Mapped Cache Architecture
-- RTL Design
-- Cache Hit/Miss Logic
-- Write-Back Cache Policy
-- Write-Allocate Policy
-- SystemVerilog Classes
-- Object-Oriented Programming
-- Mailbox Communication
-- Generator-Driver-Monitor Architecture
-- Self-Checking Scoreboard
-- Constrained Random Verification
-- Waveform Analysis
+- RTL Design Verification
+- Class-Based Verification
+- Modular Testbench Architecture
+- Directed Testcases
+- Constrained-Random Testing
+- Automatic Scoreboard Checking
+- Reference Model Based Verification
+- Cache Hit/Miss Validation
+- Write-Back Policy Verification
+- Write-Allocate Policy Verification
 
 ---
 
-# Future Improvements
-
-The following enhancements can be added in future versions:
+# Future Enhancements
 
 - Functional Coverage
-- SystemVerilog Assertions (SVA)
-- Universal Verification Methodology (UVM)
-- Set-Associative Cache
-- Multi-Level Cache
-- LRU Replacement Policy
-- Burst Transactions
-- Performance Metrics
+- Code Coverage
+- Assertion-Based Verification (SVA)
+- UVM-Based Verification Environment
+- Multi-Level Cache Verification
+- Randomized Regression Testing
 
 ---
 
@@ -229,30 +317,19 @@ The following enhancements can be added in future versions:
 
 **Saniya Vafeeka**
 
-Final Year Electronics and Communication Engineering Student
+Final Year B.E. Electronics and Communication Engineering
 
 Interested in:
 
 - Digital Design
 - RTL Design
-- Design Verification
-- SystemVerilog
-- VLSI
+- SystemVerilog Verification
+- VLSI Design Verification
 
-GitHub: https://github.com/Saniyavafeeka09
-
----
-
-## Repository Highlights
-
-- RTL Design of Direct-Mapped Cache Controller
-- Complete SystemVerilog Class-Based Verification Environment
-- Directed + Constrained Random Testing
-- Self-Checking Scoreboard
-- Simulation Waveforms
-- Verification Results
-- Well-Organized Project Structure
+GitHub: https://github.com/YOUR_USERNAME
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!
+## License
+
+This project is licensed under the MIT License.
