@@ -53,11 +53,8 @@ The verification environment follows a modular SystemVerilog class-based archite
 ## Verification Environment
 
 The project follows a modular class-based verification architecture using SystemVerilog. The environment consists of a generator, driver, monitor, scoreboard, agent, environment, interface, and test class. Transactions are generated, driven to the DUT, monitored, and verified using a self-checking scoreboard.
+![Verification Environment](Architecture/verification_environment.png)
 
-<p align="center">
-  <img src="architecture/verification_environment.png" width="700">
-</p>
-     
 ---
 
 # Verification Components
@@ -161,7 +158,7 @@ Cache-Controller-Verification-SystemVerilog
 
 The waveform below demonstrates cache read, write, hit, miss, reset and address decoding operations.
 
-![Simulation Waveform](Waveforms/cache_waveform.png)
+![Simulation Waveform](Waveforms/cache_waveform.png.png)
 
 ---
 
