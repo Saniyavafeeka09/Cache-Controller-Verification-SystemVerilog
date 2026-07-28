@@ -50,36 +50,14 @@ The following diagram illustrates the architecture of the Direct-Mapped Cache Co
 The verification environment follows a modular SystemVerilog class-based architecture.
 
 ```
-                 +----------------------+
-                 |     Generator        |
-                 +----------+-----------+
-                            |
-                            v
-                 +----------------------+
-                 |       Driver         |
-                 +----------+-----------+
-                            |
-                            v
-                    +---------------+
-                    |   Interface   |
-                    +-------+-------+
-                            |
-                            v
-                    +---------------+
-                    |      DUT      |
-                    +-------+-------+
-                            |
-                            v
-                 +----------------------+
-                 |      Monitor         |
-                 +----------+-----------+
-                            |
-                            v
-                 +----------------------+
-                 |    Scoreboard        |
-                 +----------------------+
-```
+## Verification Environment
 
+The project follows a modular class-based verification architecture using SystemVerilog. The environment consists of a generator, driver, monitor, scoreboard, agent, environment, interface, and test class. Transactions are generated, driven to the DUT, monitored, and verified using a self-checking scoreboard.
+
+<p align="center">
+  <img src="docs/verification_environment.png" width="700">
+</p>
+     
 ---
 
 # Verification Components
