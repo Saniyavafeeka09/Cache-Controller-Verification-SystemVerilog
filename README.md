@@ -238,7 +238,7 @@ Interested in:
 - SystemVerilog Verification
 - VLSI Design Verification
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/Saniyavafeeka09
 
 ---
 
