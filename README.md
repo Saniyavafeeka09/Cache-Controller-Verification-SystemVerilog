@@ -178,9 +178,7 @@ The self-checking scoreboard verified all transactions successfully.
 
 - PASS : 20
 - FAIL : 0
-
-![Scoreboard Report](Results/scoreboard_report.png)
-
+![Scoreboard Report](Results/scoreboard_report.png.png)
 ---
 
 # Tools Used
