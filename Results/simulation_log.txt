@@ -1,0 +1,47 @@
+# #Start time: 06:23:13 on Jul 28,2026
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.design_sv_unit(fast)
+# Loading work.tb_top(fast)
+# Loading work.cache_if(fast__2)
+# Loading work.cache_controller(fast)
+# Loading work.cache_if(fast)
+# 
+# run -all
+# [GEN] Done generating transactions.
+# [SCB] PASS(WRITE) addr=4
+# [SCB] PASS(READ) addr=4 exp=aa act=aa
+# [SCB] PASS(WRITE) addr=8
+# [SCB] PASS(READ) addr=4 exp=aa act=aa
+# [SCB] PASS(WRITE) addr=51
+# [SCB] PASS(READ) addr=58 exp=58 act=58
+# [SCB] PASS(WRITE) addr=71
+# [SCB] PASS(READ) addr=1d exp=1d act=1d
+# [SCB] PASS(WRITE) addr=a7
+# [SCB] PASS(WRITE) addr=76
+# [SCB] PASS(WRITE) addr=2
+# [SCB] PASS(WRITE) addr=46
+# [SCB] PASS(WRITE) addr=23
+# [SCB] PASS(WRITE) addr=1b
+# [SCB] PASS(WRITE) addr=7f
+# [SCB] PASS(WRITE) addr=f7
+# [SCB] PASS(READ) addr=d4 exp=d4 act=d4
+# [SCB] PASS(WRITE) addr=6d
+# [SCB] PASS(READ) addr=60 exp=60 act=60
+# [SCB] PASS(READ) addr=7e exp=7e act=7e
+# =========================================
+#  SCOREBOARD REPORT: PASS=20  FAIL=0
+# =========================================
